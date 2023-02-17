@@ -21,13 +21,13 @@ impl Style {
 
 pub fn add_html_styling(html: &String, style: &String) -> String {
     format!(r##"
-        <html>
-            <head>
-                <style>{style}</style>
-            </head>
-            <body class="markdown-body">
-                {html}
-            </body>
-        </html>
+<html>
+    <head>
+        <style>{style}</style>
+    </head>
+    <body class="markdown-body">
+        {html}
+    </body>
+</html>
     "##)
 }
