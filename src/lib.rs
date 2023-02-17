@@ -33,7 +33,17 @@ impl Args {
     }
 }
 
-pub fn read_file(filename: &str) -> String {
+pub fn get_current_path() -> String {
+    return match env::current_exe() {
+        Err(_) => String::new(),
+        Ok(mut path) => {
+            path.pop();
+            return path.display().to_string()
+        }
+    };
+}
+
+pub fn read_file(filename: &String) -> String {
     let file: String = match read_to_string(filename) {
         Ok(value) => value,
         Err(_) => String::new()

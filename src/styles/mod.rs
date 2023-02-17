@@ -1,19 +1,20 @@
-use md_to_html::read_file;
+use md_to_html::{read_file, get_current_path};
 
 pub struct Style {
 }
 
 impl Style {
     pub fn get(style_name: &str) -> String {
+        let css_path = get_current_path() + "/css";
         match style_name {
             "dark" => {
-                read_file("css/dark.css")
+                read_file(&format!("{css_path}/dark.css"))
             },
             "light" => {
-                read_file("css/light.css")
+                read_file(&format!("{css_path}/light.css"))
             },
             _ => {
-                read_file("css/dark.css")
+                read_file(&format!("{css_path}/dark.css"))
             }
         }
     }
