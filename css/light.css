@@ -1,6 +1,6 @@
 .markdown-body {
     max-width: 980px;
-    width: 100%;
+    width: calc(100% - 2rem);
     margin: 0 auto;
     margin-top: 1rem;
     padding: 0 1rem;
